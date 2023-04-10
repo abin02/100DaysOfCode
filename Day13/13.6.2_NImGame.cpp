@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-class Solution
+    class Solution
 {
 public:
     bool canWinNim(int n)
