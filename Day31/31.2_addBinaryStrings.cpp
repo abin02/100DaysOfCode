@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-string addBinary(string A, string B)
+string saddBinary(string A, string B)
 {
     int s, m = A.size() - 1, n = B.size() - 1, c = 0;
     string ans;
