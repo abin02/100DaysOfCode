@@ -32,5 +32,5 @@ int rec(int x, int act, vector<vector<int>> &p, vector<vector<int>> &dp)
 int ninjaTraining(int n, vector<vector<int>> &points)
 {
     vector<vector<int>> dp(n, vector<int>(4, -1));
-    return rec(n - 1, 3, points, dp);
+    return rec(n - 1, 3, points, dp);   
 }
