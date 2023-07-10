@@ -2,7 +2,7 @@
 using namespace std;
 class Solution
 {
-public:
+public: 
     int cherryPickup(vector<vector<int>> &grid)
     {
         int m = grid.size();
