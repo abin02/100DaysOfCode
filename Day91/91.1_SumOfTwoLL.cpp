@@ -88,3 +88,47 @@ public:
         return rev(head);
     }
 };
+
+// More Optimized and cleaner solution
+class Solution
+{
+public:
+    ListNode *rev(ListNode *l)
+    {
+        if (l == NULL || l->next == NULL)
+        {
+            return l;
+        }
+        ListNode *ptr = rev(l->next);
+        l->next->next = l;
+        l->next = NULL;
+        return ptr;
+    }
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+    {
+        ListNode *L2 = rev(l2);
+        ListNode *L1 = rev(l1);
+        ListNode *ans = new ListNode();
+        ListNode *head = ans;
+        int carry = 0;
+        while (L1 != NULL || L2 != NULL || carry)
+        {
+            int i = 0;
+            if (L1 != NULL)
+            {
+                i += L1->val;
+                L1 = L1->next;
+            }
+            if (L2 != NULL)
+            {
+                i += L2->val;
+                L2 = L2->next;
+            }
+            i += carry;
+            carry = i / 10;
+            ans->next = new ListNode(i % 10);
+            ans = ans->next;
+        }
+        return rev(head->next);
+    }
+};
