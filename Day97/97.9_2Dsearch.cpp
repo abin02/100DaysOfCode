@@ -15,11 +15,11 @@ public:
             if(matrix[mid1][0] < target && matrix[mid1][n-1] >=target){
                 break;
             }
-            if(matrix[mid1][0]>target){
-                e=mid1-1;
+            if(matrix[mid1][0]<target){
+                s=mid1+1;
             }
             else{
-                s=mid1+1;
+                e=mid1-1;
             }
         }
         while(l<=r){
